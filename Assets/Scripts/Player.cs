@@ -19,7 +19,11 @@ public class Player : MonoBehaviour
 
         transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
 
-      
+        Vector3 clampedPosition = transform.position;
+
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -4.1f, 4.1f);
+
+        transform.position = clampedPosition;
 
     }
 }
