@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ObstacleMovement : MonoBehaviour
 {
     private float xSpeed = -4f;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,4 +23,6 @@ public class ObstacleMovement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+  
 }

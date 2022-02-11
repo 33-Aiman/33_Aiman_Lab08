@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -25,5 +26,17 @@ public class Player : MonoBehaviour
 
         transform.position = clampedPosition;
 
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+       switch (other.gameObject.tag)
+        {
+            case "Obstacle":
+                SceneManager.LoadScene("GameOver");
+
+                break;
+
+        }
     }
 }
